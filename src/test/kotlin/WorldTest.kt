@@ -3,13 +3,21 @@ import org.junit.Test
 
 class WorldTest {
 
+    /*
+        Focusing on the symmetry between a good test
+         name and the code under test is a subtle design technique.
+
+         Make sure that you are actually testing what you say you are testing.
+     */
+
     @Test
     fun `Test a new world is empty`(){
         val world = World()
 
         val size = world.livingCells.size
+        val isEmpty = world.isEmpty()
 
-        assertEquals(0, size)
+        assertEquals(true, isEmpty)
     }
 
     @Test
@@ -17,8 +25,9 @@ class WorldTest {
         val world = World()
 
         world.setLivingAt(1, 1)
-        val size = world.livingCells.size
+        //val size = world.livingCells.size
+        val isAliveAt = world.isAliveAt(1, 1)
 
-        assertEquals(1, size)
+        assertEquals(true, isAliveAt)
     }
 }
