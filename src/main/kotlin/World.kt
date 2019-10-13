@@ -1,7 +1,7 @@
 class World {
     var livingCells = listOf<Int>()
 
-    fun setLivingAt(x: Int, y: Int){
+    fun setLivingAt(location: Location){
 
     }
 
@@ -9,11 +9,13 @@ class World {
 
     }
 
-    fun isAliveAt(x: Int, y: Int){
+    fun isAliveAt(location: Location){
 
     }
-    
+
 }
 
-class LivingCell(var x: Int, var y: Int)
-class DeadCell(var x: Int, var y: Int)
+class LivingCell(var location: Location)
+class DeadCell(var location: Location)
+
+data class Location(val x: Int, val y: Int)
